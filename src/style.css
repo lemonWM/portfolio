@@ -1,0 +1,82 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0px 16px;
+}
+.container-sm {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0px 16px;
+}
+h1,h2,h3,span,p,button {
+  padding: 0px;
+  margin: 0px;
+  letter-spacing: 2px;
+}
+h1 {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 0px 40px 0px 0px;
+  cursor: pointer;
+}
+
+a {
+  padding: 0px 40px 0px 0px;
+  text-decoration: none;
+}
+
+.light button, .light a, .light h1, .light h2, .light h3, .light h4, .light span, .light p{
+  color: #5d5d5d;
+}
+.dark button, .dark a, .dark h1, .dark h2, .dark h3, .dark h4, .dark span, .dark p{
+  color: #e1e1e1;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
