@@ -109,7 +109,7 @@
                         },
                         duration: 3,
                         opacity: 0,
-                        scale: .95,
+                        scale: .93,
                         autoAlpha: 0,
                     });
                 })
@@ -210,6 +210,7 @@
             &--projects {
                 position: relative;
                 z-index: 3;
+                padding-bottom: 150px;
                 .project-single {
                     align-items: flex-end;
 

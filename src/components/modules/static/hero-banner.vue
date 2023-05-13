@@ -4,7 +4,7 @@
             <div class="hero-banner__wrapper" :class="{'active': loaded}">
                 <div class="d-flex flex-row flex-wrap">
                     <div class="content">
-                        <div ref="logo" class="hero-banner__wrapper--logo">
+                        <div class="hero-banner__wrapper--logo">
                             <img v-if="layout == 'dark'" src="../../../assets/logo/logo-light.png" alt="art">
                             <img v-else src="../../../assets/logo/logo-dark.png" alt="art">
                         </div>
@@ -49,26 +49,13 @@
                 loaded: false
             })
 
-            const logo = ref(null);
-            const trigger = ref(null)
-            const image = ref(null);
-
             const loaded = computed(() => store.state.theme.loaded );
             const layout = computed(() => store.state.theme.layout );
 
-            const gsapAnimation = () => {
+            const trigger = ref(null);
+            const image = ref(null);
 
-                gsap.to(logo.value, {
-                    scrollTrigger: {
-                        trigger: logo.value,
-                        scrub: true,
-                        start: "top top",
-                        markers: false,
-                        invalidateOnResize: true,
-                    },
-                    duration: 1,
-                    margin: '160 0 0 0'
-                });
+            const gsapAnimation = () => {
 
                 gsap.to(image.value, {
                     scrollTrigger: {
@@ -100,7 +87,7 @@
             })
 
             return {
-                state, loaded, layout, logo,trigger, image
+                state, loaded, layout, trigger, image
             }
         }
     }
