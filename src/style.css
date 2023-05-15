@@ -62,10 +62,10 @@ a {
 }
 
 .light button, .light a, .light h1, .light h2, .light h3, .light h4, .light span, .light p{
-  color: #5d5d5d;
+  color: #5d5d5d !important;
 }
 .dark button, .dark a, .dark h1, .dark h2, .dark h3, .dark h4, .dark span, .dark p{
-  color: #e1e1e1;
+  color: #e1e1e1 !important;
 }
 
 .d-flex {

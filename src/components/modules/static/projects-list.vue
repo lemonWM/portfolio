@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="projects-list__wrapper--projects">
-                    <div v-for="(item, index) in state.projects " :key="item.title" :ref="el =>  itemList.push(el)" class="project-single d-flex flex-column" :class="{'reverse': index%2 ===1}">
+                    <div v-for="(item, index) in state.projects" :key="item.title" :ref="el =>  itemList.push(el)" class="project-single d-flex flex-column" :class="{'reverse': index%2 ===1}">
                         <div class="project-single-link">
                             <router-link  :to="{name: 'Project', params: {id: item.url }}" class="item-link d-flex flex-column">
                                 <span :class="layout">0{{index + 1 }}. {{ item.title }}</span>

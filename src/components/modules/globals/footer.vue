@@ -11,6 +11,7 @@
                     <div class="contact">
                         <a href="tel:+48662744552">phone</a>
                         <a href="mailto:arturchochla@gmail.com">mail</a>
+                        <a href="https://github.com/lemonWM" target="_blank">github</a>
                     </div>
                 </div>
 

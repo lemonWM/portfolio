@@ -180,7 +180,7 @@
 
                 span {
                     font-size: 12px;
-                    color: hsla(0, 0%, 48.6%);
+                    color: hsla(0, 0%, 48.6%) !important;
                 }
             }
 

@@ -1,6 +1,6 @@
 <template>
    
-    <section ref="trigger" class="navigation">
+    <header ref="trigger" class="navigation">
         <div class="container">
             <div ref="navigation" v-if="state.loaded" class="navigation__wrapper">
                 <button v-if="state.layout == 'dark'" @click="lightMode">Light mode</button>
@@ -10,7 +10,7 @@
                 <router-link to="/stack">Skills & stack</router-link>
             </div>
         </div>
-    </section>
+    </header>
 
 </template>
   
@@ -20,7 +20,7 @@
     import gsap from 'gsap'
 
     export default {
-        name: "Navigation",
+        name: "header",
 
         setup() {
             

@@ -1,15 +1,15 @@
 
 <script>
     import preloader from './components/modules/globals/preloader.vue'
-    import navigation from './components/modules/globals/navigation.vue'
+    import headerSimple from './components/modules/globals/header.vue'
     import footerSimple from './components/modules/globals/footer.vue'
 
-    import { computed, reactive } from 'vue'
+    import { computed } from 'vue'
     import { useStore } from 'vuex'
 
     export default {
         components: {
-            navigation,
+            headerSimple,
             preloader,
             footerSimple
         },
@@ -29,10 +29,22 @@
 <template>
     <div class="main" :class="layout">
         <div class="main__wrapper" :class="{ 'active-mode': switched}">
-            <preloader />
-            <navigation />
-            <router-view />
-            <footerSimple />
+            
+            <div class="preloader-container">
+                <preloader />
+            </div>
+
+            <div class="header-container">
+                <headerSimple />
+            </div>
+            
+            <div class="body-container">
+                <router-view />
+            </div>
+            
+            <div class="footer-container">
+                <footerSimple />
+            </div>
         </div>
     </div>
 </template>

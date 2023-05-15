@@ -1,11 +1,11 @@
 <template>
 
-    stack tutaj będą mofuły 
+    <heroBanner /> 
+    <stackList />
 
 </template>
 
 <script setup>
-    import { ref } from 'vue'
-
-
+    import heroBanner from "../modules/static/hero-banner-stack.vue"
+    import stackList from "../modules/static/stack-list.vue"
 </script>

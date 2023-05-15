@@ -10,11 +10,7 @@ const store = createStore({
                 "loaded": false,
                 "apiConnected": false
             },
-            "widgets": [
-                {
-                    "name": 'projectList'
-                }
-            ]
+            "widgets": []
         }
     },
     mutations: {
@@ -46,6 +42,7 @@ const store = createStore({
             return state.widgets[0].projects.find(project => project.url === url)
         }
     },
+ 
     plugins: [createPersistedState({
         paths: ['widgets'],
     })]
