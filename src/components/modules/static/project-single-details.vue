@@ -1,28 +1,33 @@
 <template>
     <section v-if="state.loaded" class="project-single-details d-flex flex-column">
         <div class="container-sm">
-            <div class="project-single-details__wrapper d-flex flex-row">
-                <div v-for="(item, index) in state.project.details.images " :key="index" class="project-single-details__wrapper--img" :class="[`project-single-details__wrapper--img--${index + 1}`]">
-                    <img v-if="index < '3'" :src="item.url" alt="img">
+            <div class="trigger">
+                <div ref="trigger" class="project-single-details__wrapper d-flex flex-row">
+                    <div v-for="(item, index) in state.project.details.images " 
+                        :ref="el =>  itemList.push(el)" 
+                        :key="index" class="project-single-details__wrapper--img" 
+                        :class="[`project-single-details__wrapper--img--${index + 1}`]">
+                        <img v-if="index < '3'" :src="item.url" alt="img">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt ab, repellat, labore aspernatur natus iure odit soluta nihil blanditiis pariatur quasi, iusto recusandae perferendis ipsam! Maxime ea quibusdam qui architecto!</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="project-single-details__wrapper">
+    </section>
+    <section  v-if="state.loaded" class="project-single-features">
+        <div class="container-sm">
+            <div class="project-single-details__wrapper-texts">
                 <div class="project-single-details__wrapper--features">
                     <h3>About project</h3>
                     <p>{{ project.details.features }}</p>
                 </div>
             </div>
-        </div>
-
-
-        
+        </div> 
     </section>
 </template>
 
 <script>
-    import { onMounted, reactive, computed, ref, onUpdated } from 'vue'
+    import { onMounted, reactive, computed, ref, onUpdated, onUnmounted } from 'vue'
     import { useStore } from 'vuex'
     import { useRoute } from 'vue-router'
     import gsap from 'gsap'
@@ -46,13 +51,55 @@
             const loaded = computed(() => store.state.theme.loaded );
             const project =  store.getters.singleProject(projectSingle);
 
+            const itemList = ref([]);
+            const trigger = ref(null);
+            
+
+            const gsapAnimation2 = () => {
+
+                let sections = gsap.utils.toArray(itemList.value);
+
+                if(sections.length){
+
+                    gsap.to(sections, {
+                        xPercent: -100 * (sections.length - 1),
+                        ease: 'none',
+                        start: "top top",
+                        scrollTrigger: {
+                            trigger: trigger.value,
+                            pin: true,
+                            scrub: true,
+                            snap: 1 / (sections.length - 1),
+                            end: "+=3500",
+                        },
+                    });
+                }
+            }
+
             onMounted(() => {
                 state.project = project
                 state.loaded = loaded;
+            });
+
+            onUpdated(() => {
+
+                setTimeout(() => {
+                    
+                    gsapAnimation2();
+                }, 500);
+            });
+
+            onUnmounted(() => {
+
+                let triggers = ScrollTrigger.getAll();
+
+                triggers.forEach( trigger => {			
+                    trigger.kill();
+                });
             })
 
             return {
-                state,loaded, projectSingle, project
+                state,loaded, projectSingle, project, itemList, trigger
             }
         }
     } 
@@ -61,61 +108,21 @@
 <style lang="scss" scoped>
 
     .project-single-details {
-        min-height: 500px;
-
+  
         &__wrapper {
-
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            z-index: 3;
 
             &--img {
-                
-                img {
-                    position: relative;
-                    z-index: 3;
-                }
-
-                &--1 {
-
-
-                    img {
-                        max-width: 200px;
-                        margin-right: -50px;
-                        z-index: 4;
-                        margin-top: 200px;
-                    }
-                }
-                &--2 {
-
-
-                    img {
-                        max-width: 700px;
-                    }
-                }
-                &--3 {
-
-
-                    img {
-                        max-width: 200px;
-                        margin-left: 20px;
-                        margin-top: 30px;
-                    }
-                }
-            }
-
-            &--features {
-
-                h3 {
-                    margin-top: 200px;
-                    margin-bottom: 30px;
-                    font-size: 13px;
-                    letter-spacing: 2px;
-                }
-                p {
-                    font-size: 21px;
-                    margin-bottom: 200px;
-                    //max-width: 500px;
-                }
+                padding-top: 100px;
             }
         }
+    }
+    .project-single-features {
+        margin-top: 150px;
     }
 
 </style>

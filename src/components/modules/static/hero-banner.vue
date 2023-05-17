@@ -74,8 +74,6 @@
             onMounted(()=> {
 
                 state.loaded = loaded;
-
-                gsapAnimation(); 
             });
 
             onUpdated(()=> {

@@ -41,6 +41,7 @@
     import { useStore } from 'vuex'
     import axios from 'axios'
     import gsap from 'gsap'
+    import ScrollTrigger from "gsap/ScrollTrigger";
 
     export default {
         name: "Projects-list",
@@ -126,9 +127,11 @@
 
             onUpdated(()=> {
                 setTimeout(() => {
+                    
                     gsapAnimation()
                 }, 500);
-            })
+            });
+
 
             return {
                 state, loaded, layout, apiConnected , animation, title, itemList
