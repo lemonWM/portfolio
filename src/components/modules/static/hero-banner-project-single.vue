@@ -10,7 +10,8 @@
                     <div class="details d-flex flex-column">
                         <span>Client: {{ state.project.details.client }}</span>
                         <span>Date: {{ state.project.details.date }}</span>
-                        <a :href="state.project.details.repoLink" target="_blank">Code</a>
+                        <a v-if="state.project.details.repoLink" :href="state.project.details.repoLink" target="_blank">Code</a>
+                        <a v-if="state.project.details.livePge" :href="state.project.details.livePge" target="_blank">Live</a>
                     </div>
                     <div class="deccription">
                         <p>{{ state.project.details.description }}</p>
@@ -141,6 +142,9 @@
                     span {
                         line-height: 36px;
                         padding-bottom: 20px;
+                    }
+                    a {
+                        line-height: 50px;
                     }
                 }
                 .deccription {

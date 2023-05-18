@@ -8,7 +8,6 @@
                         :key="index" class="project-single-details__wrapper--img" 
                         :class="[`project-single-details__wrapper--img--${index + 1}`]">
                         <img v-if="index < '3'" :src="item.url" alt="img">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt ab, repellat, labore aspernatur natus iure odit soluta nihil blanditiis pariatur quasi, iusto recusandae perferendis ipsam! Maxime ea quibusdam qui architecto!</p>
                     </div>
                 </div>
             </div>
