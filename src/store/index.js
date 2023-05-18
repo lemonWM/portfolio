@@ -42,11 +42,10 @@ const store = createStore({
             return state.widgets[0].projects.find(project => project.url === url)
         }
     },
- /*
+ 
     plugins: [createPersistedState({
         paths: ['widgets'],
     })]
-    */
 })
 
 export default store
