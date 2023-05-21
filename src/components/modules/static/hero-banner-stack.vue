@@ -166,6 +166,10 @@
                     img {
                         max-width: 280px;
                     }
+
+                    @media (max-width: 768px) {
+                        padding-top: 80px;
+                    }
                 }
 
                 .hero-banner__wrapper--details {
@@ -177,10 +181,18 @@
                     .trigger {
                         height: 150px;
                         display: block;
+
+                        @media (max-width: 7868px) {
+                            height: 80px;
+                        }
                     }
                     .trigger2 {
                         height: 140px;
                         display: block;
+
+                        @media (max-width: 7868px) {
+                            height: 80px;
+                        }
                     }
 
                     h1 {

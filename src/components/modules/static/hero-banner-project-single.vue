@@ -129,6 +129,10 @@
                     opacity: 1;
                     animation-name: top_h1;
                     animation-duration: 1s;
+
+                    @media (max-width: 7868px) {
+                        font-size: 44px;
+                    }
                 }
             }
             &--bottom {
@@ -136,6 +140,12 @@
                 padding-top: 100px;
                 margin-top: 0px;
                 opacity: 1;
+
+                @media (max-width: 7868px) {
+                    flex-direction: column !important;
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                }
 
                 .details {
 
@@ -145,10 +155,39 @@
                     }
                     a {
                         line-height: 50px;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        display: flex;
+                        align-items: center;
+
+                        @keyframes bottomLine {
+                            0% {opacity: 0; }
+                            50% {opacity: 1;}
+                            75% {opacity: 0;}
+                            100% {opacity: 1;}
+                        }
+
+                        &::after{
+                            content: "";
+                            display: block;
+                            content: "";
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            border-bottom: 2px solid;
+                            margin-left: 5px;
+                            opacity: 1;
+                            animation-name: bottomLine;
+                            animation-duration: 4s;
+                        }
                     }
                 }
                 .deccription {
                     max-width: 400px;
+
+                    @media (max-width: 7868px) {
+                        max-width: 100%;
+                    }
 
                     p {
                         line-height: 50px;

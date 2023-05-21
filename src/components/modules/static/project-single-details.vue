@@ -117,6 +117,12 @@
 
             &--img {
                 padding-top: 100px;
+
+                img {
+                    @media (max-width: 768px) {
+                        max-width: 600px;
+                    }
+                }
             }
         }
     }

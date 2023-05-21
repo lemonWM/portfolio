@@ -201,10 +201,20 @@
                         margin-bottom: 30px;
                         letter-spacing: 2px;
                         text-transform: uppercase;
+
+                        @media (max-width: 768px) {
+                            padding-top: 100px;
+                        }
                     }
                     h1 {
                         font-size: 80px;
                         padding-bottom: 200px;
+
+                        @media (max-width: 768px) {
+                            opacity: 1 !important;
+                            font-size: 44px;
+                            padding-bottom: 100px;
+                        }
                     }
                 }
 
@@ -256,6 +266,10 @@
                                 max-width: 620px;
                                 z-index: 2;
                                 position: relative;
+
+                                @media (max-width: 768px) {
+                                    max-width: 100%;
+                                }
                             }
                         }
 
@@ -273,6 +287,13 @@
                                 bottom: -30px;
                             }
                         }
+                    }
+
+                    @media (max-width: 768px) {
+                        align-items: center !important;
+                        padding-bottom: 40px;
+                        opacity: 1 !important;
+                        visibility: visible !important;
                     }
                 }
             }

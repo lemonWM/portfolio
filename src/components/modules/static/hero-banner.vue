@@ -115,6 +115,10 @@
                     img {
                         max-width: 280px;
                     }
+
+                    @media (max-width: 768px) {
+                        padding-top: 80px;
+                    }
                 }
 
                 .hero-banner__wrapper--details {
@@ -143,6 +147,10 @@
                         text-transform: uppercase;
                         font-weight: 300;
                         letter-spacing: 2px;
+
+                        @media (max-width: 768px) {
+                            margin-top: 40px;
+                        }
                     }
                 }
             }
@@ -150,6 +158,10 @@
 
             .images {
                 width: 70%;
+
+                @media (max-width:768px) {
+                    width: 100%;
+                }
 
                 &.active {
 
@@ -197,6 +209,16 @@
                     display: flex;
                     justify-content: end;
 
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                        
+                        img {
+                            margin-top: 0px !important;
+                            margin-right: 0px !important;
+                            max-width: 100% !important;
+                        }
+                    }
+
                     img {
                         margin-top: -100px;
                         max-width: 500px;
@@ -207,6 +229,16 @@
                 .image-section-2 {
                     display: flex;
                     justify-content: center;
+
+
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                        
+                        img {
+                            margin-top: 0px !important;
+                        }
+                    }
+
                     img {
                         z-index: 2;
                         max-width: 400px;
@@ -217,6 +249,15 @@
                 .image-section-3 {
                     display: flex;
                     justify-content: flex-end;
+
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                        
+                        img {
+                            margin-top: 0px !important;
+                        }
+                    }
+
                     img {
                         z-index: 2;
                         height: 100px;

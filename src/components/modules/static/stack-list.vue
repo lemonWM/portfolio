@@ -103,9 +103,17 @@
         &__wrapper {
             padding-bottom: 140px;
 
+            @media (max-width: 7868px) {
+                padding-bottom: 70px;
+            }
+
             .trigger {
                 display: block;
                 height: 140px;
+
+                @media (max-width: 7868px) {
+                    height: 80px;
+                }
             }
 
             .single {
@@ -130,6 +138,10 @@
                             letter-spacing: -3px;
                             color: #191b1d;
                             font-weight: 500;
+
+                            @media (max-width: 7868px) {
+                                font-size: 30px;
+                            }
                         }
                     }
 
@@ -137,7 +149,23 @@
                         opacity: 0;
                         transition: all .3s;
                         padding-left: 50px;
+
+                        @media (max-width: 7868px) {
+                            opacity: 1;
+                        }
                     }
+                }
+
+                @media (max-width: 768px) {
+                    margin-left: 0px !important;
+                    opacity: 1 !important;
+                }
+            }
+
+            @media (max-width: 7868px) {
+            
+                &--items {
+                    margin-top: 0px !important;
                 }
             }
         }

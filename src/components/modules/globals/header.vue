@@ -18,6 +18,8 @@
     import { computed, reactive, onMounted, ref, onUpdated } from 'vue'
     import { useStore } from 'vuex'
     import gsap from 'gsap'
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
     export default {
         name: "header",
@@ -56,7 +58,7 @@
             }
 
             const darkMode = () => {
-
+                
                 store.commit('updateLayout', 'dark');
 
                 reloadAfterLayout();
@@ -114,6 +116,10 @@
             //animation-name: load;
             //animation-duration: 1s;
 
+            @media (max-width: 768px) {
+                padding-top: 60px;
+            }
+
             button {
                 font-size: 14px;
                 letter-spacing: 1.5px;
@@ -123,6 +129,13 @@
                 font-size: 14px;
                 letter-spacing: 1.5px;
                 text-transform: uppercase;
+            }
+
+            @media (max-width: 768px) {
+                button, a {
+                    font-size: 12px !important;
+                    padding: 0px 30px 0px 0px !important;
+                }
             }
 
             .router-link-exact-active {
