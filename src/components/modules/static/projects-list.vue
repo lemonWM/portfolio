@@ -251,6 +251,11 @@
                         a {
                             padding: 0px;
 
+                            @media (max-width: 768px) {
+                                min-width: 100%;
+                                width: 100%;
+                            }
+
                             span {
                                 font-size: 11px;
                                 text-transform: uppercase;
@@ -269,6 +274,8 @@
 
                                 @media (max-width: 768px) {
                                     max-width: 100%;
+                                    min-width: 100%;
+                                    width: 100%;
                                 }
                             }
                         }
