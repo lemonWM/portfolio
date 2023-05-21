@@ -130,7 +130,7 @@
                     animation-name: top_h1;
                     animation-duration: 1s;
 
-                    @media (max-width: 7868px) {
+                    @media (max-width: 768px) {
                         font-size: 44px;
                     }
                 }
@@ -141,7 +141,7 @@
                 margin-top: 0px;
                 opacity: 1;
 
-                @media (max-width: 7868px) {
+                @media (max-width: 768px) {
                     flex-direction: column !important;
                     opacity: 1 !important;
                     visibility: visible !important;
@@ -185,7 +185,7 @@
                 .deccription {
                     max-width: 400px;
 
-                    @media (max-width: 7868px) {
+                    @media (max-width: 768px) {
                         max-width: 100%;
                     }
 

@@ -182,7 +182,7 @@
                         height: 150px;
                         display: block;
 
-                        @media (max-width: 7868px) {
+                        @media (max-width: 768px) {
                             height: 80px;
                         }
                     }
@@ -190,7 +190,7 @@
                         height: 140px;
                         display: block;
 
-                        @media (max-width: 7868px) {
+                        @media (max-width: 768px) {
                             height: 80px;
                         }
                     }
